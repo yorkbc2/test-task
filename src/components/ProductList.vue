@@ -12,7 +12,9 @@
           :image="pr.image"
           :price="parseFloat(pr.price)"
           :oldprice="pr.oldprice"
-          :sale="pr.sale">
+          :sale="pr.sale"
+          :id="pr.id"
+          :event="event">
 
         </product-item>
       </template>
@@ -25,16 +27,11 @@
 <script>
   import Vue from "vue";
   import Product from "./Product.vue";
-  import products from "./../config/products.js"
 
   Vue.component("product-item", Product);
 
   export default {
-    data() {
-      return {
-        products: products
-      }
-    }
+    props: ['products', 'event']
   }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="product__item">
+  <div class="product__item" @click="event($event, id)">
 
     <div class="product__image">
       <img width="265px" :src="image" :alt="'Image'">
@@ -22,7 +22,7 @@
 
   export default {
     name: "Product",
-    props: ["image", "price", "oldprice", "sale"]
+    props: ["image", "price", "oldprice", "sale", "event", "id"]
   }
 </script>
 
@@ -35,5 +35,7 @@
     background-color: #000;
 
     position: relative;
+
+    cursor: pointer;
   }
 </style>
