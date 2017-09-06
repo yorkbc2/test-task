@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <app-view></app-view>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import ViewComponent from "./components/ViewComponent.vue"
+import Vue from "vue"
+
+Vue.component("app-view", ViewComponent)
+
 
 export default {
-  name: 'app',
-  components: {
-    Hello
-  }
+  name: 'app'
 }
 </script>
 
