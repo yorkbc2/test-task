@@ -46,7 +46,7 @@
     min-width: 63px;
 
     background-color: #8ae6cf;
-    padding: 4px;
+    padding: 2px;
   }
 
   .product__price span {
@@ -56,6 +56,8 @@
   .product__price_string {
     font-weight: 600;
     color: #2c303d;
+    font-family: "Open Sans", sans-serif;
+
   }
 
   .product__price_string._old {

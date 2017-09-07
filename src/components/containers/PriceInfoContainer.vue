@@ -4,7 +4,7 @@
     <template v-if="oldprice && sale == true">
       <h3 class="product__price_string _old">
 
-        $ {{oldprice}}
+        ${{parseFloat(oldprice).toFixed(2)}}
 
       </h3>
       <h3 class="product__price_string _sale">

@@ -1,5 +1,5 @@
 <template>
-  <div class="product__item" @click="event($event, id)">
+  <div class="product__item" @click="event($event, id)" v-if="!hidden">
 
     <div class="product__image">
       <img width="265px" :src="image" :alt="'Image'">
@@ -22,17 +22,15 @@
 
   export default {
     name: "Product",
-    props: ["image", "price", "oldprice", "sale", "event", "id"]
+    props: ["image", "price", "oldprice", "sale", "event", "id", "hidden"]
   }
 </script>
 
 <style scoped>
   .product__item {
     flex-basis: 265px;
-    border: 1px solid red;
 
     margin: 10px;
-    background-color: #000;
 
     position: relative;
 

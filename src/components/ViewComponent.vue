@@ -24,7 +24,7 @@ export default {
 
   data() {
     return {
-      selectedProduct: {},
+      selectedProduct: products[0],
       products: products
     }
   },

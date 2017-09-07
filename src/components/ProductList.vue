@@ -14,7 +14,9 @@
           :oldprice="pr.oldprice"
           :sale="pr.sale"
           :id="pr.id"
-          :event="event">
+          :event="event"
+          :hidden="pr.hidden"
+          :stars="pr.stars">
 
         </product-item>
       </template>
@@ -38,9 +40,10 @@
 <style scoped>
   .product__list_header {
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.7px;
     text-align: left;
-
+    font-family: "Open Sans", sans-serif;
+  font-weight: bolder;
     margin-left: 10px;
   }
 
