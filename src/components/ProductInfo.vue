@@ -28,6 +28,9 @@
           {{product.description}}
         </p>
       </div>
+      <div class="product__button">
+        <product-cart-button :label="'Add to cart'" :submit="true"></product-cart-button>
+      </div>
     </div>
   </div>
 </template>
@@ -36,11 +39,13 @@
   import Vue from "vue";
   import PriceInfoContainer from "./containers/PriceInfoContainer.vue";
   import StarsContainer from "./containers/StarsContainer.vue";
-  import ProductShareIt from "./containers/ProductShareIt.vue"
+  import ProductShareIt from "./containers/ProductShareIt.vue";
+  import ProductCartButton from "./containers/ProductCartButton.vue"
 
   Vue.component("product-price", PriceInfoContainer)
   Vue.component("product-stars", StarsContainer)
   Vue.component("product-share-it", ProductShareIt)
+  Vue.component("product-cart-button", ProductCartButton)
 
   export default {
     props: ["product"]

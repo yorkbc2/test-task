@@ -3,7 +3,7 @@
     <a @click="openLittleModalWindow()" href="#" class="product__share">
       Share it!
     </a>
-    <div class="product__share_links">
+    <div v-if="showLinks === true" class="product__share_links">
       <button @click="closeLittleModalWindow()" class="product__links_cancel">
         &times;
       </button>
@@ -21,7 +21,23 @@ import ProductSocialLinks from "./ProductSocialLinks.vue";
 Vue.component("product-social", ProductSocialLinks)
 
   export default {
-    props: ["inline"]
+    props: ["inline"],
+
+    data() {
+      return {
+        showLinks: false
+      }
+    },
+
+    methods: {
+      openLittleModalWindow() {
+        this.showLinks = !this.showLinks;
+      },
+
+      closeLittleModalWindow() {
+        this.showLinks = false;
+      }
+    }
   }
 </script>
 
@@ -47,12 +63,19 @@ Vue.component("product-social", ProductSocialLinks)
 
     position: absolute;
 
-    top: 140%;
+    top: 100%;
     width: 287px;
     left: -100px;
     box-shadow: 0px 0px 3px #333;
     background-color: #fff;
     padding: 10px;
+
+    animation: topAnim 0.3s ease-in-out forwards;
+  }
+
+  @keyframes topAnim {
+    from {top: 100%; opacity: 0;}
+    to {top: 140%; opacity: 1;}
   }
 
   .product__share_links::before {
@@ -83,5 +106,8 @@ Vue.component("product-social", ProductSocialLinks)
     top: 10px;
     right: 10px;
     font-size: 26pt;
+
+    outline: none;
+    cursor: pointer;
   }
 </style>
